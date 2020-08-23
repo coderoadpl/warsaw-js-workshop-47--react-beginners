@@ -2,7 +2,10 @@ import React from 'react'
 
 const NewMessageForm = () => {
   return (
-    <input value={'New message text!'} />
+    <input
+      value={'New message text!'}
+      onChange={(event) => console.log(event.target.value)}
+    />
   )
 }
 
