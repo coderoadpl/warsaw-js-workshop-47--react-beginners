@@ -24,6 +24,7 @@ const App = () => {
       <NewMessageForm
         newMessage={newMessage}
         setNewMessage={setNewMessage}
+        sendMessageHandler={console.log}
       />
     </div>
   )
