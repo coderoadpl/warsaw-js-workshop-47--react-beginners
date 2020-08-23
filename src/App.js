@@ -13,7 +13,19 @@ const App = () => {
   React.useEffect(() => {
     database.ref('messages').on(
       'value',
-      (snapshot) => console.log(snapshot.val())
+      (snapshot) => {
+        const messagesFromDb = snapshot.val()
+
+        const messages = (
+          Object.entries(messagesFromDb || {})
+            .map(([key, message]) => ({
+              ...message,
+              key
+            }))
+        )
+
+        setMessages(messages)
+      }
     )
   }, [])
 
