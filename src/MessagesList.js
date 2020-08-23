@@ -2,7 +2,7 @@ import React from 'react'
 import Message from './Message'
 
 const MessagesList = (props) => {
-  const { messages } = props
+  const { messages, ...otherProps } = props
 
   return (
     messages.map((message, i) => {
@@ -10,6 +10,7 @@ const MessagesList = (props) => {
         <Message
           key={i}
           message={message}
+          {...otherProps}
         />
       )
     })
