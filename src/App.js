@@ -4,10 +4,8 @@ import Message from './Message'
 const App = () => {
   return (
     <div>
-      <h1>Hello React</h1>
-      <h1>Hello React</h1>
-      <Message />
-      <Message />
+      <Message text="Hello!" />
+      <Message text="Hi!" />
     </div>
   )
 }
