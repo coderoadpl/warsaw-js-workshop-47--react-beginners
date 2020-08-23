@@ -18,13 +18,18 @@ const messages = [
 const App = () => {
   const [newMessage, setNewMessage] = React.useState('')
 
+  const sendMessageHandler = (event) => {
+    event.preventDefault()
+    console.log(event)
+  }
+
   return (
     <div>
       <MessagesList messages={messages} />
       <NewMessageForm
         newMessage={newMessage}
         setNewMessage={setNewMessage}
-        sendMessageHandler={console.log}
+        sendMessageHandler={sendMessageHandler}
       />
     </div>
   )
