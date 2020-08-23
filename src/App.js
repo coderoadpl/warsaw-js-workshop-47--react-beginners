@@ -2,25 +2,27 @@ import React from 'react'
 import MessagesList from './MessagesList'
 import NewMessageForm from './NewMessageForm'
 
-const messages = [
-  {
-    text: 'Hello',
-    sender: 'Mateusz',
-    date: Date.now(),
-  },
-  {
-    text: 'hi!',
-    sender: 'Mateusz',
-    date: Date.now(),
-  }
-]
+const SENDER = 'Mateusz'
 
 const App = () => {
   const [newMessage, setNewMessage] = React.useState('')
+  const [messages, setMessages] = React.useState([])
+
+  const addMessage = (newMessageText) => {
+    const newMessageObj = {
+      text: newMessageText,
+      sender: SENDER,
+      date: Date.now(),
+    }
+
+    setMessages(messages.concat(newMessageObj))
+    setNewMessage('')
+  }
 
   const sendMessageHandler = (event) => {
     event.preventDefault()
-    console.log(event)
+   
+    addMessage(newMessage)
   }
 
   return (
