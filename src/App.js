@@ -16,10 +16,15 @@ const messages = [
 ]
 
 const App = () => {
+  const [newMessage, setNewMessage] = React.useState('')
+
   return (
     <div>
       <MessagesList messages={messages} />
-      <NewMessageForm />
+      <NewMessageForm
+        newMessage={newMessage}
+        setNewMessage={setNewMessage}
+      />
     </div>
   )
 }
