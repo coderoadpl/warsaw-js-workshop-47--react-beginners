@@ -18,8 +18,13 @@ const App = () => {
   return (
     <div>
       {
-        messages.map((message) => {
-          return <Message text={message.text} />
+        messages.map((message, i) => {
+          return (
+            <Message
+              key={i}
+              text={message.text}
+            />
+          )
         })
       }
     </div>
