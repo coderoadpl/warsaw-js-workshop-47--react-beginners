@@ -36,7 +36,8 @@ const App = () => {
       date: Date.now(),
     }
 
-    setMessages(messages.concat(newMessageObj))
+    database.ref('messages').push(newMessageObj)
+
     setNewMessage('')
   }
 
