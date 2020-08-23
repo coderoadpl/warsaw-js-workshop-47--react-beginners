@@ -1,5 +1,6 @@
 import React from 'react'
 import MessagesList from './MessagesList'
+import NewMessageForm from './NewMessageForm'
 
 const messages = [
   {
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <div>
       <MessagesList messages={messages} />
+      <NewMessageForm />
     </div>
   )
 }
